@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>rosdynamixel</name>
+  <name>mydynamixel_for_ros</name>
   <version>0.0.0</version>
   <description>mydynamixel for ROS</description>
   <maintainer email="arai261@stu.kanazawa-u.ac.jp">fal2bro</maintainer>

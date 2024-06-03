@@ -2,7 +2,7 @@
 
 import rospy
 
-from mypkg.msg import *
+from mydynamixel_for_ros.msg import *
 import myDynamixel
 
 
