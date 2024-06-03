@@ -5,6 +5,11 @@ import rospy
 from mydynamixel_for_ros.msg import *
 import myDynamixel
 
+#使い方
+#必要に応じてmain関数のMotorNumを変更
+#rostopic pub /トピック名　データ型　メッセージ内容
+#---example---"
+#rostopic pub position_control SetPosition "{id: 1, position: 1000}"
 
 
 
@@ -62,7 +67,7 @@ def mydynamixel_control():
     rospy.Subscriber('position_control',SetPosition,set_goal_pos_callback)
     rospy.Subscriber('current_control',SetCurrent,set_goal_current_callback)
     rospy.Subscriber('velocity_control',SetVelocity,set_goal_velocity_callback)
-    rospy.Subscriber('extended_Position_control',SetPosition,set_goal_ex_pos_callback)#横着かも
+    rospy.Subscriber('extended_Position_control',SetPosition,set_goal_ex_pos_callback)
     rospy.Subscriber('current_base_position_control',SetPosition,set_goal_current_base_pos_callback)
     rospy.Subscriber('pwm_control',SetPwm,set_goal_pwm_callback)
     rospy.spin()
