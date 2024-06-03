@@ -12,7 +12,23 @@ import myDynamixel
 #rostopic pub position_control SetPosition "{id: 1, position: 1000}"
 
 
+def publish_sample_data():
+    rospy.init_node('sample_publisher')
+    pub = rospy.Publisher('velocity_control', SetVelocity, queue_size=10)
+    rate = rospy.Rate(1)  # パブリッシュの周波数を設定 (1 Hz)
 
+    while not rospy.is_shutdown():
+        # SetPosition型のメッセージを作成し、適当なデータを設定
+        msg = SetVelocity()
+        msg.id = 1
+        msg.velocity = 100  # 適当な値を設定
+        # メッセージをパブリッシュ
+        pub.publish(msg)
+        rate.sleep()
+
+        msg.id = 1
+        msg.velocity = 0
+        rate.sleep()
 
 
 def set_goal_pos_callback(data):
