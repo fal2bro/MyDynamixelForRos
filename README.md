@@ -20,7 +20,7 @@ rosrun mydynamixel\_for\_ros mydynamixel_control.py
 必要に応じてmain関数のMotorNumを変更　　
 基本構文:rostopic pub /トピック名　データ型　メッセージ内容　　
 message型はmsgディレクトリ内参照　　
-**　---example---"
+**　---example---" **
 ```bash
 rostopic pub position_control SetPosition "{id: 1, position: 1000}"
 ```
