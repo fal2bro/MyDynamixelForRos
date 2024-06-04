@@ -12,14 +12,15 @@ USBデバイスに権限を与えていない場合は付与しておく
 sudo chmod 666 /dev/ttyUSB0/
 ```
 wsl上でUSBの認識をさせる場合は[こちら参照](https://learn.microsoft.com/ja-jp/windows/wsl/connect-usb)
+
 ```bash
 roscore
 rosrun mydynamixel\_for\_ros mydynamixel_control.py
 ```
-必要に応じてmain関数のMotorNumを変更
-基本構文:rostopic pub /トピック名　データ型　メッセージ内容
-message型はmsgディレクトリ内参照
-#---example---"
+必要に応じてmain関数のMotorNumを変更　　
+基本構文:rostopic pub /トピック名　データ型　メッセージ内容　　
+message型はmsgディレクトリ内参照　　
+**　---example---"
 ```bash
 rostopic pub position_control SetPosition "{id: 1, position: 1000}"
 ```
